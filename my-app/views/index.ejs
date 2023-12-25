@@ -1,0 +1,15 @@
+<%- include("partials/head")%>
+<body>
+  <h1>All students</h1>
+
+  <ul>
+    <% for (student of students){ %>
+    <li>
+      <a href="/students/<%=student.id%>"
+        ><%= student.firstName %> <%= student.lastName %></a
+      >
+    </li>
+    <% } %>
+  </ul>
+  <a href="/students/new">ADD NEW</a>
+</body>

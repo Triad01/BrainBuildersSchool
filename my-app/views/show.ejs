@@ -1,0 +1,22 @@
+<%-include("partials/head") %>
+  <body>
+      <h1><%=found_student.firstName%>'s profile</h1>
+      <p>Welcome to <%= found_student.firstName%>'s profile...She is a student of brain builders school</p>
+
+      <div>
+        first Name - <%=found_student.firstName %> <br>
+        last Name - <%= found_student.lastName %> <br>
+        age - <%= found_student.age %> <br>
+        class - <%= found_student.class  %> <br>
+        email - <%= found_student.email  %> <br>
+      </div>
+
+      <form method="post"action="/students/<%=found_student.id%>?_method=DELETE"  enctype="application/x-www-form-urlencoded">
+        <input type="hidden" name="_method" value="DELETE" />
+        <button>Delete</button>
+      </form>
+      <form method="get"action="/students">
+        <button>Back</button>
+      </form>
+  </body>
+</html>
